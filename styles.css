@@ -27,7 +27,6 @@ body {
   position: absolute;
   height: inherit;
   width: 100%;
-  z-index: 2;
   padding: 0 !important;
   background-image: url("./public/profile-bg.png");
   background-color: #f2ae1c;
@@ -35,20 +34,6 @@ body {
   background-position-y: top;
   background-repeat: no-repeat;
   background-size: contain;
-}
-.routing-block {
-  display: grid;
-  grid-template-columns: 1fr 6fr;
-  justify-content: space-between;
-  align-items: center;
-  height: 70px;
-  width: 100%;
-  padding-right: 80px;
-  background: #e5d0ac;
-  position: relative;
-  z-index: 3;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  position: fixed;
 }
 .data-block {
   display: flex;
@@ -68,12 +53,13 @@ body {
   padding-bottom: 20px;
 }
 .data-block p {
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 .nav-link {
-  color: #ffffff;
+  color: #ffffff !important;
   font-family: "Lato", serif;
   font-weight: normal;
+  font-size: 1.2rem;
 }
 .nav-link:hover {
   color: #ffffff;
@@ -88,11 +74,6 @@ body {
 }
 .nav-link.cont:hover {
   background-color: #2d4059;
-}
-.portfolio-nav {
-  height: 70px;
-  padding-top: 20px;
-  padding-right: 60px;
 }
 .arc {
   width: 100%;
@@ -199,26 +180,37 @@ body {
   border-radius: 20px;
   margin-bottom: 35px;
 }
+p.fTag {
+  font-size: 2.3rem;
+  color: #2a7a65;
+  font-weight: 600;
+}
 
 /* breakpoints for mobile */
 
-@media ((min-width: 300px) and (max-width: 992px)) {
+@media ((min-width: 300px) and (max-width: 800px)) {
+  .header-content {
+    background-image: none;
+  }
   .arc {
     display: none;
   }
   .data-block {
-    padding: 130px 30px 20px;
+    padding-top: 100px;
     width: 100%;
-    margin: 20px;
+    margin: 0;
+  }
+  p.fTag {
+    font-size: 1.7rem;
+  }
+  .data-block h1 {
+    font-size: 3rem;
   }
   .header {
     height: 75vh;
   }
   .content .skills-container {
     padding: 0px 20px 40px;
-  }
-  .portfolio-nav {
-    display: none;
   }
   .content .skills {
     height: 65vh;
@@ -229,5 +221,19 @@ body {
   }
   .contact .mediums {
     width: 75%;
+  }
+  .data-block p {
+    font-size: 1rem;
+  }
+  @media ((min-width: 800px) and (max-width: 1300px)) { 
+    .data-block {
+      margin-top: 2%;
+    }
+    .arc {
+      bottom: -60px;
+    }
+    .skills .arc {
+      bottom: -2px;
+    }
   }
 }
